@@ -18,7 +18,7 @@ function draw() {
   background("black");  
   
   car.collide(wall)
-  if(wall.x-car.x<car.width/2+wall.width/2){
+  if(wall.x-car.x<(car.width+wall.width)/2){
 
     car.velocityX=0;
     deformation=0.5*weight*speed*speed/22500;
@@ -27,11 +27,11 @@ function draw() {
       car.shapeColor="red"
     }
 
-    if(deformation<180){
+    if(deformation<180 && deformation>100){
       car.shapeColor="yellow"
     }
 
-    if(deformation<80){
+    if(deformation<100){
       car.shapeColor="green"
     }
   }
